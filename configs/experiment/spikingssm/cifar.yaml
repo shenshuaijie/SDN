@@ -1,0 +1,42 @@
+# @package _global_
+defaults:
+  - /pipeline: cifar
+  - override /scheduler: cosine_warmup
+
+model:
+  _name_: spikingssm
+  dropout: 0.1
+  # tie_dropout: true
+  n_layers: 6
+  d_model: 512
+  prenorm: false
+  norm: layer
+  layer:
+    d_state: 64
+    bidirectional: true
+    learnable_vth: true
+    lr: 0.001
+    dt_min: 0.001
+    dt_max: 0.1
+    shared_vth: false
+    trainable_B: false
+
+dataset:
+  grayscale: true
+
+loader:
+  batch_size: 50
+
+optimizer:
+  lr: 0.01
+  weight_decay: 0.01
+
+trainer:
+  max_epochs: 200
+
+scheduler:
+  num_training_steps: 180000  # 200 epochs
+  num_warmup_steps: 18000
+
+train:
+  seed: 2222
