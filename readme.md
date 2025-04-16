@@ -137,14 +137,17 @@ python -m train experiment=spikingssm/cifar
 
 If you use this work in your research, please cite:
 ```bibtex
-@misc{shen2024spikingssms,
-  title={SpikingSSMs: Learning Long Sequences with Sparse and Parallel Spiking State Space Models}, 
-  author={Shuaijie Shen and Chao Wang and Renzhuo Huang and Yan Zhong and Qinghai Guo and Zhichao Lu and Jianguo Zhang and Luziwei Leng},
-  year={2024},
-  eprint={2408.14909},
-  archivePrefix={arXiv},
-  primaryClass={cs.CL},
-  url={https://arxiv.org/abs/2408.14909}
+@article{Shen_Wang_Huang_Zhong_Guo_Lu_Zhang_Leng_2025,
+  title   = {SpikingSSMs: Learning Long Sequences with Sparse and Parallel Spiking State Space Models},
+  volume  = {39},
+  url     = {https://ojs.aaai.org/index.php/AAAI/article/view/34245},
+  doi     = {10.1609/aaai.v39i19.34245},
+  number  = {19},
+  journal = {Proceedings of the AAAI Conference on Artificial Intelligence},
+  author  = {Shen, Shuaijie and Wang, Chao and Huang, Renzhuo and Zhong, Yan and Guo, Qinghai and Lu, Zhichao and Zhang, Jianguo and Leng, Luziwei},
+  year    = {2025},
+  month   = {Apr.},
+  pages   = {20380-20388}
 }
 ```
 
