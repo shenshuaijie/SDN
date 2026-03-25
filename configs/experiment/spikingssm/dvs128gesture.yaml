@@ -1,0 +1,42 @@
+# @package _global_
+defaults:
+  - /pipeline: dvs128gesture
+  - override /scheduler: cosine_warmup
+
+model:
+  _name_: spikingssm
+  dropout: 0.1
+  # tie_dropout: true
+  n_layers: 6
+  d_model: 512
+  prenorm: false
+  norm: layer
+  layer:
+    d_state: 16
+    bidirectional: true
+    learnable_vth: true
+    lr: 0.001
+    dt_min: 0.001
+    dt_max: 0.1
+    shared_vth: false
+    trainable_B: true
+
+dataset:
+  grayscale: true
+
+loader:
+  batch_size: 32
+
+optimizer:
+  lr: 0.005
+  weight_decay: 0.05
+
+trainer:
+  max_epochs: 200
+
+scheduler:
+  num_training_steps: 180000  # 200 epochs
+  num_warmup_steps: 900
+
+train:
+  seed: 2222

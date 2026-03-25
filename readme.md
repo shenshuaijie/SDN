@@ -61,6 +61,9 @@ Clone the official S4 repository and install dependencies:
 git clone https://github.com/state-spaces/s4.git
 cd s4
 # Follow S4's installation instructions
+
+# And tonic for only dvs128-gesture experiment
+pip install tonic
 ```
 
 ---

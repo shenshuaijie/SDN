@@ -1,0 +1,37 @@
+# @package _global_
+defaults:
+  - /pipeline: sc
+  - override /scheduler: cosine_warmup
+
+model:
+  _name_: spikingssm
+  dropout: 0.0
+  n_layers: 6
+  prenorm: true
+  d_model: 128
+  norm: batch
+  layer:
+    d_state: 16
+    bidirectional: true
+    learnable_vth: true
+    lr: 0.001
+    dt_min: 0.001
+    dt_max: 0.1
+    shared_vth: false
+    trainable_B: true
+
+optimizer:
+  lr: 0.01
+  weight_decay: 0.01
+
+loader:
+  batch_size: 16
+
+trainer:
+  max_epochs: 40
+
+scheduler:
+  num_training_steps: 200000
+
+train:
+  seed: 2222
